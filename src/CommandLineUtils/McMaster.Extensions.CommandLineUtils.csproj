@@ -3,7 +3,8 @@
   <Import Project="releasenotes.props" />
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard1.6;net45</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard1.6</TargetFrameworks>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">$(TargetFrameworks);net45</TargetFrameworks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <WarningsNotAsErrors>$(WarningsNotAsErrors);1591</WarningsNotAsErrors>
     <IsPackable>true</IsPackable>
